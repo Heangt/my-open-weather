@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/7e77bb7224.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <form id="form-city">
+      <input
+        id="input-city"
+        type="search"
+        class="form-control styleform"
+        placeholder="   Enter location  "
+      />
+    </for>
+    <button>Current</button>
+    <hr />
+
+    <div class="header">
+      <h1>Spain</h1>
+      <small id="actual-date"> Saturday 11:00 </small>
+      <strong id="temperature">25</strong>
+      <span class="units">
+        <a href="#" id="celsius-link">ºC</a>
+        | <a href="#" id="fahrenheit-link">ºF</a>
+      </span>
+      <small class="climate">Sunny</small>
+
+      <p class="temperature">Precipitation Humidity Wind</p>
+      <p class="degree">1% 60% 16km/h</p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 5em">
+            <div class="card-body">
+              <h2 class="card-title">Sat</h2>
+              <i class="fa-solid fa-sun"></i>
+              <p class="card-text">25º</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card" style="width: 5em">
+            <div class="card-body">
+              <h2 class="card-title">Sun</h2>
+              <i class="fa-solid fa-cloud-sun"></i>
+              <p class="card-text">20º</p>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width: 5rem">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Mon</h2>
+              <i class="fa-solid fa-cloud-sun-rain"></i>
+              <p class="card-text">19º</p>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width: 5em">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Tue</h2>
+              <i class="fa-solid fa-cloud-rain"> </i>
+              <p class="card-text">15º</p>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width: 5em">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Wed</h2>
+              <i class="fa-solid fa-cloud-bolt"></i>
+              <p class="card-text">20º</p>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width: 5em">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Thu</h2>
+              <i class="fa-solid fa-cloud"></i>
+              <p class="card-text">20º</p>
+            </div>
+          </div>
+        </div>
+        <div class="col" style="width: 5em">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Fri</h2>
+              <i class="fa-solid fa-sun"></i>
+              <p class="card-text">26º</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="src/index.js"></script>
+  </body>
+</html>
