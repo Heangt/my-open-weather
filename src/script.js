@@ -1,8 +1,10 @@
 function showTemp(response) {
+  
   let showCity = document.querySelector("h1");
   showCity.innerHTML = response.data.name;
   let degrees = document.querySelector("#temperature");
   degrees.innerHTML = Math.round(response.data.main.temp);
+  
 }
 function getPosition(position) {
   let lat = position.coords.latitude;
@@ -47,8 +49,13 @@ showDefaultCity("Madrid");
 
 let currentDate = new Date();
 let currentHour = currentDate.getHours();
+if (currentHour < 10){
+currentHour =`0${currentHour}`;
+}
 let currentMinutes = currentDate.getMinutes();
-
+if (currentMinutes < 10){
+currentMinutes =`0${currentMinutes}`;
+}
 let days = [
   "sunday",
   "Monday",
