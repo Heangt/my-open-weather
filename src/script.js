@@ -19,23 +19,31 @@ let button = document.querySelector("button");
 button.addEventListener("click", showCurrentTemperature);
 
 function showTemperature(response) {
-  let Temperature = Math.round(response.data.main.temp);
+ let Temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature");
   degrees.innerHTML = Temperature;
   let showCity = document.querySelector("h1");
   showCity.innerHTML=response.data.name;
-   
+  
 }
-function displayCity(event) {
+   function showDefaultCity (city){
+  let  apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
+  let apiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+ axios.get(apiWeather).then(showTemperature);
+
+}
+function searchCity(event) {
   event.preventDefault();
-  let searchCity = document.querySelector("#input-city");
+   let searchCity = document.querySelector("#input-city");
   let nameCity = `${searchCity.value}`;
-  let apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
-  let apiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${nameCity}&units=metric&appid=${apiKey}`;
-  axios.get(apiWeather).then(showTemperature);
-}
+  showDefaultCity(nameCity);
+  }
 let city = document.querySelector("#form-city");
-city.addEventListener("submit", displayCity);
+city.addEventListener("submit", searchCity);
+
+
+
+showDefaultCity("Madrid");
 
 let currentDate = new Date();
 let currentHour = currentDate.getHours();
