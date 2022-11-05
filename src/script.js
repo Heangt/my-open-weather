@@ -43,7 +43,7 @@ return`${currentDay} ${currentHour}:${currentMinutes}`;
 
 
 function showTemperature(response) {
-  console.log(response)
+  
  let Temperature = Math.round(response.data.main.temp);
   let degrees = document.querySelector("#temperature");
   degrees.innerHTML = Temperature;
