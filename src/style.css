@@ -93,10 +93,12 @@ small.climate {
     font-size: 16px;
 }
 
-p.temperature {
+p.condition {
+    font-size: 12px;
     word-spacing: 15px;
-    padding-left: 10px;
+    padding-left: 20px;
     margin-left: 15px;
+    
 }
 
 span.units {
@@ -104,10 +106,12 @@ span.units {
     margin-left: 2px;
 }
 
-p.degree {
+small.degree {
+    font-size: 11px;
     word-spacing: 30px;
-    margin-left: 60px;
-    padding-left: 10px;
+    padding: 5px 0 0 5px;
+    margin-left: 40px;
+    
 }
 
 input.styleform {

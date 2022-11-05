@@ -50,8 +50,10 @@ function showTemperature(response) {
   let showCity = document.querySelector("h1");
   showCity.innerHTML=response.data.name;
   let today = document.querySelector("#actual-date");
-today.innerHTML =formatDate(response.data.dt * 1000);
-  
+  today.innerHTML =formatDate(response.data.dt * 1000);
+  let units = document.querySelector("#unit");
+  units.innerHTML = `${response.data.main.humidity}% ${Math.round(response.data.wind.speed)}km/h`;
+
   
 }
    function showDefaultCity (city){
