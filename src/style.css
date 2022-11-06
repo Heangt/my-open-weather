@@ -125,7 +125,11 @@ input.styleform {
 .form-control {
     width: 84%;
 }
-span.name {
-    color: #000;
-}
 
+.header .active{
+  color: black;
+  cursor: default;
+}
+.header .active:hover {
+  text-decoration: none;
+}
