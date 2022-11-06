@@ -57,13 +57,19 @@ button:hover {
   background: floralwhite;
   color: brown;
 }
+img {
+    margin-left: 40%;
+    margin-top: -37%;
+
+    
+}
 .section{
     border: 2px solid #8eb757;
     border-radius: 10px;
 }
 .header {
     background: #fff;
-    background-image: url("../media/planning\ tomatoes.jpeg");
+    background-image: url("../media/woman\ planting.jpeg");
     padding-left: 30px;
     opacity: 0.8;
 }
