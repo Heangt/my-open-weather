@@ -54,6 +54,8 @@ let today = document.querySelector("#actual-date");
 today.innerHTML =formatDate(response.data.dt * 1000);
 let units = document.querySelector("#unit");
 units.innerHTML = `${response.data.main.humidity}% ${Math.round(response.data.wind.speed)}km/h`;
+let condition =document.querySelector("#description");
+condition.innerHTML =response.data.weather[0].main;
 }
    function showDefaultCity (city){
   let  apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
