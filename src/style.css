@@ -36,7 +36,7 @@ a:hover {
     text-decoration: underline;
 }
 
-i {
+img.icon-weather {
     font-size: 30px;
     color: #fff;
 }
@@ -87,15 +87,28 @@ img {
     padding: 50px;
 }
 
-.card-body {
-    text-align: center;
+.card-body:hover {
+    
     background: rgba(129, 143, 183, 0.2);
-    border-radius: 4px;
+    
+}
+p.card-text {
+    text-align: center;
+    margin-top: -10px;
+    
+}
+img.icon-weather {
+    display: block;
+    margin: -20px 0 0;
+    
+    width: 70px;
+    
+    
 }
 
 small.climate {
     display: block;
-    margin: -25px 0 0 50px;
+    margin: -25px 0 0 55px;
     font-size: 16px;
 }
 
@@ -111,6 +124,9 @@ span.units {
     position: absolute;
     margin-left: 2px;
 }
+.span.max {
+    font-weight: 800;
+}
 
 small.degree {
     font-size: 11px;
@@ -119,6 +135,7 @@ small.degree {
     margin-left: 40px;
     
 }
+
 
 input.styleform {
     border: none;
