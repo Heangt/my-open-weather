@@ -23,11 +23,11 @@ let currentMinutes = currentDate.getMinutes();
 if (currentMinutes < 10){
 currentMinutes =`0${currentMinutes}`;
 }
-
 let currentDay = days[currentDate.getDay()];
-
 return`${currentDay} ${currentHour}:${currentMinutes}`;
 }
+
+
 let days = [
   "Sunday",
   "Monday",
@@ -62,7 +62,6 @@ function displayForecast(response){
 }
 
 
-
 function getForecast(coord){
   
   let latitude =coord.lat;
@@ -70,20 +69,28 @@ function getForecast(coord){
   let  apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
   let apiForecast =`http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   axios.get(apiForecast).then(displayForecast);
-  
-
+}
+function toggleTheme(timestamp){
+  let date =new Date(timestamp);
+  let hour = date.getHours();
+  let nightTheme = document.querySelector("#theme");
+  if (hour >=18){
+  nightTheme.classList.add("night-theme");
+  nightTheme.classList.remove("day-theme");
+}
 }
 
 
-
-function showTemperature(response) { celsius = response.data.main.temp;
+function showTemperature(response) { 
+let celsius = response.data.main.temp;
 let temperature = Math.round(celsius);
 let degrees = document.querySelector("#temperature");
 degrees.innerHTML = temperature;
 let showCity = document.querySelector("h1");
 showCity.innerHTML=response.data.name;
+let dateTime =response.data.dt * 1000;
 let today = document.querySelector("#actual-date");
-today.innerHTML =formatDate(response.data.dt * 1000);
+today.innerHTML =formatDate(dateTime);
 let units = document.querySelector("#unit");
 units.innerHTML = `${response.data.main.humidity}% ${Math.round(response.data.wind.speed)}km/h`;
 let condition =document.querySelector("#description");
@@ -94,14 +101,13 @@ icon.setAttribute("src", `http://openweathermap.org/img/wn/${weatherIcon}@2x.png
 icon.setAttribute("alt",response.data.weather[0].main );
 let geoCoordinates =response.data.coord;
 getForecast(geoCoordinates);
-
-
+toggleTheme(dateTime);
 
 }
    function showDefaultCity (city){
   let  apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
   let apiWeather = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
- axios.get(apiWeather).then(showTemperature);
+  axios.get(apiWeather).then(showTemperature);
 
 }
 function searchCity(event) {

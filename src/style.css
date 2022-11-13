@@ -3,6 +3,7 @@ body {
     font-size: 14px;
     margin: 2% 20%;
     padding: 5px;
+    
 }
 
 h1 {
@@ -67,12 +68,20 @@ img {
     border: 2px solid #8eb757;
     border-radius: 10px;
 }
-.header {
-    background: #fff;
+.night-theme {
+    background-image: url("../media/sleep.jpeg");
+    padding-left: 30px;
+    opacity: 0.8;
+}
+
+.day-theme {
+    
     background-image: url("../media/woman\ planting.jpeg");
     padding-left: 30px;
     opacity: 0.8;
 }
+
+
 
 .container {
     padding-top: 20px;
@@ -113,7 +122,7 @@ small.climate {
 }
 
 p.condition {
-    font-size: 12px;
+    font-size: 13px;
     word-spacing: 15px;
     padding-left: 20px;
     margin-left: 15px;
@@ -124,15 +133,20 @@ span.units {
     position: absolute;
     margin-left: 2px;
 }
-.span.max {
-    font-weight: 800;
+p.card-text {
+    font-weight: 300;
+}
+span.temp-max {
+    font-weight: 600;
 }
 
 small.degree {
-    font-size: 11px;
+    font-size: 12px;
+    color: #dc3545;
+    font-weight: 600;
     word-spacing: 30px;
     padding: 5px 0 0 5px;
-    margin-left: 40px;
+    margin-left: 45px;
     
 }
 
@@ -143,10 +157,13 @@ input.styleform {
     text-indent: 15px;
     margin-top: 7px;
     margin-left: 5px;
+    
 }
 
 .form-control {
     width: 84%;
+    transition: off;
+    
 }
 
 .header .active{
@@ -156,3 +173,4 @@ input.styleform {
 .header .active:hover {
   text-decoration: none;
 }
+
