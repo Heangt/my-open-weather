@@ -52,7 +52,7 @@ function getForecast(coord){
   let latitude =coord.lat;
   let longitude =coord.lon;
   let  apiKey = "57821c3b75b60c68ecd1a8d0dd1aa8d3";
-  let apiForecast =`http://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+  let apiForecast =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
   axios.get(apiForecast).then(displayForecast);
 }
 function toggleTheme(timestamp){
